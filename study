@@ -1,0 +1,18 @@
+// 安装
+npm install -g create-react-app
+create-react-app my-app
+cd my-app
+// 运行
+npm start
+// 弹出webpack配置（自定义配置）
+npm run eject
+// 如何将本地有的项目传到git上(学习网址https://www.cnblogs.com/eedc/p/6168430.html)
+到指定目录
+git init
+git add .
+
+
+// es6 语法
+略
+
+
