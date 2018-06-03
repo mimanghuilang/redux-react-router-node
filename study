@@ -112,6 +112,16 @@ counter,
 compose(applyMiddleware(thunk),reduxDevtools()||{}));
 
 // 使用react-redux
+安装 npm install react-redux --save
+忘记 subscribe记住reducer,action和dispatch即可
+react-redux 提供Proveder和connect两个接口来链接
+
+Provider 组件在应用最外层，传入store即可，只用一次
+Connect 负责从外部获取组件需要的参数
+
+Connect 可以用装饰器的方式来写:需要安装下面的东西
+npm install babel-plugin-transform-decorators-legacy --save
+
 
 
 
