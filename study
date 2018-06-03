@@ -89,10 +89,33 @@ npm install babel-plugin-import --save-dev
 //Redux
 专注于状态管理的库
 安装 npm install redux --save
-需求
+
+进一步
 1、store.dispatch 方法传递给组件，内部可以调用修改状态
 2、Subscribe订阅render函数，每次修改都重新渲染
 3、Redux相关内容，移到单独的文件index.redux.js单独管理
+
+更进一步 处理异步任务
+redux-thunk插件安装
+npm install redux-thunk --save
+启用插件
+import {createStore,applyMiddleware} from "redux"
+import thunk  from "redux-thunk"
+const  store=createStore(counter,applyMiddleware(thunk));
+
+redux chorm 插件安装
+redux 调试工具的安装
+import {createStore,applyMiddleware,compose} from "redux"
+const reduxDevtools=window.devToolsExtension;
+const  store=createStore(
+counter,
+compose(applyMiddleware(thunk),reduxDevtools()||{}));
+
+// 使用react-redux
+
+
+
+
 
 
 
