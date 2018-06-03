@@ -13,6 +13,85 @@ git add .
 
 
 // es6 语法
+let const声明变量，以及块级作用域
+结构赋值
+箭头函数，赋默认值
+import { } from ""
+import course from ""  (export default)
+import * as content from ""
+
+数组的一些方法
+forEach遍历数组,map映射新数组
+every 判断数组是否通过测试
+some 是否有元素通过测试
+filter 过滤数组
+查找符合条件的元素
+[1,2,3].indexOf(2) 查找索引
+链接数组
+arr1=[1,2,3];
+arr2=[4,5,6];
+[...arr1,...arr2]
+数组去重
+arr=[1,2,3,4,5,6,3,2,1];
+[...new Set(arr)]
+// 对象的方法
+Object.keys({name:"jm",age:14});
+对象的数组的值
+Object.values({name:"jm",age:14})
+反转数组
+reverse():
+获取数组的头和尾巴（略，用解构赋值）
+
+
+//Express+mongodb(http://localhost:9093/data)
+安装
+npm install express --save
+启动
+cd server
+node server.js
+
+每次修改都重启node,很麻烦
+npm install -g nodemon
+nodemon server.js
+
+// Express 使用
+app.get app.post 分别开发get 和 post接口
+app.user 使用模块
+代 res.send, res.json, res.sendfile响应不同的内容
+
+基础:
+mongodb
+安装 mongodb(参考地址：https://blog.csdn.net/heshushun/article/details/77776706)
+npm install mongoose --save
+修改server.js链接数据库
+后续进阶
+mongodb独立工具函数
+post 参数
+cookie
+
+React 基础
 略
+结合antd mobild
+npm install antd-mobile --save
+按需加载
+npm install babel-plugin-import --save-dev
+修改
+ "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      ["import", { "libraryName": "antd-mobile", "style": "css" }]
+    ]
+  },
+  // 组件（略）
+
+//Redux
+专注于状态管理的库
+安装 npm install redux --save
+
+
+
+
 
 
