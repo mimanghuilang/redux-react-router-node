@@ -1,12 +1,10 @@
 import React from "react"
-import { addGUN } from "./index.redux"
-
 class App extends React.Component {
     // constructor(props){
     //     super(props);
     // }
     render() {
-        const store = this.props.store;
+        const {addGUN,store}=this.props;
         const num = store.getState();
         return (
             <div>
