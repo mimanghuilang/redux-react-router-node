@@ -1,24 +1,19 @@
-import React, {Component} from 'react';
-import {Button} from "antd-mobile"
-// import "antd-mobile/dist/antd-mobile.css"
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { addGUN } from "./index.redux"
 
-class App extends Component {
+class App extends React.Component {
+    // constructor(props){
+    //     super(props);
+    // }
     render() {
+        const store = this.props.store;
+        const num = store.getState();
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                <Button type="primary" onClick={()=>{console.log("你妹")}}>你妹</Button>
+            <div>
+                <h1>现在有机枪{num}把</h1>
+                <button onClick={()=>store.dispatch(addGUN())}>申请武器</button>
             </div>
-        );
+        )
     }
 }
-
-export default App;
+export default  App;
