@@ -122,6 +122,26 @@ Connect 负责从外部获取组件需要的参数
 Connect 可以用装饰器的方式来写:需要安装下面的东西
 npm install babel-plugin-transform-decorators-legacy --save
 
+// 后续进阶
+什么数据应该放在React里
+Redux管理ajax
+Redux管理聊天数据
+
+
+// react-router的使用
+redux-router4 兼容浏览器和react-native
+React 开发单页面应用必备，践行路由即组件的概念
+核心概念：动态路由、Route、Link、Switch
+
+安装
+npm install react-router-dom --save
+初始Router4
+入门组件
+BrowserRouter,包裹整个应用
+Router 路由对应渲染的组件，可嵌套
+Link跳转专用
+
+
 
 
 
