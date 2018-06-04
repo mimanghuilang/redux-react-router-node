@@ -20,6 +20,11 @@ function Erying() {
 function Sanying() {
     return <h2>三营</h2>
 }
+class Test extends React.Component{
+    render(){
+        return <h2>测试组件{this.props.match.params.location}</h2>
+    }
+}
 
 ReactDom.render(
     <Provider store={store}>
@@ -30,10 +35,14 @@ ReactDom.render(
                     <li><Link to="/erying">二营</Link></li>
                     <li><Link to="/sanying">三营</Link></li>
                 </ul>
-                <Redirect to="/"> </Redirect>
-                <Route path="/" exact component={App}></Route>
-                <Route path="/erying" component={Erying}></Route>
-                <Route path="/sanying" component={Sanying}></Route>
+                <Switch>
+                    {/*只渲染第一个命中的Route*/}
+                    <Route path="/" exact component={App}></Route>
+                    <Route path="/erying" component={Erying}></Route>
+                    <Route path="/sanying" component={Sanying}></Route>
+                    <Route path="/:location" exact component={Test}></Route>
+                </Switch>
+
             </div>
         </BrowserRouter>
     </Provider>
