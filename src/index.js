@@ -20,6 +20,12 @@ function Erying() {
 function Sanying() {
     return <h2>三营</h2>
 }
+class Test extends React.Component{
+    render(){
+        console.log(this.props);
+        return <h2>测试组件{this.props.match.params.location}</h2>
+    }
+}
 
 ReactDom.render(
     <Provider store={store}>
@@ -31,6 +37,7 @@ ReactDom.render(
                     <li><Link to="/sanying">三营</Link></li>
                 </ul>
                 <Route path="/" exact component={App}></Route>
+                <Route path="/:location" exact component={Test}></Route>
                 <Route path="/erying" component={Erying}></Route>
                 <Route path="/sanying" component={Sanying}></Route>
             </div>

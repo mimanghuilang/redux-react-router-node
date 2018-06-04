@@ -141,6 +141,10 @@ BrowserRouter,包裹整个应用
 Router 路由对应渲染的组件，可嵌套
 Link跳转专用
 
+// 其他组件
+url参数，Route组件参数可用冒号标识参数
+
+
 
 
 
