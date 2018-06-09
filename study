@@ -149,6 +149,14 @@ url参数，Route组件参数可用冒号标识参数
 Redirect组件跳转
 Switch 只渲染一个Route组件
 
+// 需求分析
+略
+
+前后端联调
+使用axios发送异步请求
+    如何发送，端口不一致，使用proxy配置转发
+    axios拦截器，统一loading 处理
+    redux里面使用异步数据，渲染页面
 
 
 

@@ -13,7 +13,6 @@ const store = createStore(
     reducers,
     compose(applyMiddleware(thunk), reduxDevtools() || {})
 );
-console.log(store.getState());
 // 登录
 // 没有登录信息，统一跳转到login
 // 页面
