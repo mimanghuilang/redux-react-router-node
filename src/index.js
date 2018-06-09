@@ -3,47 +3,34 @@ import ReactDom from "react-dom"
 import {createStore, applyMiddleware, compose} from "redux"
 import thunk from "redux-thunk"
 import {Provider} from "react-redux"
-import {BrowserRouter, Link, Route,Redirect,Switch} from "react-router-dom"
-import App from "./App";
-import {counter} from "./index.redux"
+import {BrowserRouter, Route,Switch} from "react-router-dom"
+import reducers from "./reducer"
+import Auth from "./Auth"
+import  Dashboard from "./Dashboard"
 
 const reduxDevtools = window.devToolsExtension;
 const store = createStore(
-    counter,
+    reducers,
     compose(applyMiddleware(thunk), reduxDevtools() || {})
 );
-
-function Erying() {
-    return <h2>二营</h2>
-}
-
-function Sanying() {
-    return <h2>三营</h2>
-}
-class Test extends React.Component{
-    render(){
-        return <h2>测试组件{this.props.match.params.location}</h2>
-    }
-}
-
+console.log(store.getState());
+// 登录
+// 没有登录信息，统一跳转到login
+// 页面
+//  一营
+//  二营
+//  三营
+// router+redux
 ReactDom.render(
     <Provider store={store}>
         <BrowserRouter>
-            <div>
-                <ul>
-                    <li><Link to="/">一营</Link></li>
-                    <li><Link to="/erying">二营</Link></li>
-                    <li><Link to="/sanying">三营</Link></li>
-                </ul>
-                <Switch>
-                    {/*只渲染第一个命中的Route*/}
-                    <Route path="/" exact component={App}></Route>
-                    <Route path="/erying" component={Erying}></Route>
-                    <Route path="/sanying" component={Sanying}></Route>
-                    <Route path="/:location" exact component={Test}></Route>
-                </Switch>
+            <Switch>
+                {/*只渲染第一个命中的Route*/}
+                <Route path="/login" exact component={Auth}></Route>
+                <Route path="/dashboard" component={Dashboard}></Route>
+                {/*<Redirect to="/dashboard"></Redirect>*/}
+            </Switch>
 
-            </div>
         </BrowserRouter>
     </Provider>
     , document.getElementById("root")

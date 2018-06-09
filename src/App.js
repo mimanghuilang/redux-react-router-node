@@ -2,7 +2,7 @@ import React from "react"
 import {connect} from "react-redux"
 import {addGUN, addGunAsync, removeGUN} from "./index.redux";
 const  mapStatetoProps= (state)=>{
-    return {num:state}
+    return {num:state.counter}
 };
 const actionCreators={addGUN,removeGUN,addGunAsync};
 // App=connect(mapStatetoProps,actionCreators)(App);

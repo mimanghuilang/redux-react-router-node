@@ -143,8 +143,11 @@ Link跳转专用
 
 // 其他组件
 url参数，Route组件参数可用冒号标识参数
+其他略（如 redirect)
 
-
+复杂redux应用，多个reducer用combineReducers合并
+Redirect组件跳转
+Switch 只渲染一个Route组件
 
 
 
