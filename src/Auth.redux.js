@@ -23,8 +23,10 @@ export  function auth(state=initState,action) {
 // action
 export  function getUserData() {
     // dispatch 用来通知数据的修改
+    console.log(axios);
     return dispatch=>{
             axios.get("/data").then((res)=>{
+                console.log(res);
                 if(res.status===200){
                     const [data]=res.data;
                     dispatch(userData(data))
