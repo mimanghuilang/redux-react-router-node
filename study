@@ -159,6 +159,14 @@ Switch 只渲染一个Route组件
     redux里面使用异步数据，渲染页面
 
 
+// express 依赖cookie,需要使用cookie-parser
+安装： npm install cookie-parser --save
+
+// post 请求要安装 body-parser插件
+安装 npm install body-parser --save
+
+
+
 
 
 

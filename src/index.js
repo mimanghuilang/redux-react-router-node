@@ -3,35 +3,33 @@ import ReactDom from "react-dom"
 import {createStore, applyMiddleware, compose} from "redux"
 import thunk from "redux-thunk"
 import {Provider} from "react-redux"
-import {BrowserRouter, Route,Switch} from "react-router-dom"
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+import Register from "./container/register/register";
+import AuthRoute from "./component/authRoute/authRoute"
+import Login from "./container/login/login";
 import reducers from "./reducer"
-import Auth from "./Auth"
-import  Dashboard from "./Dashboard"
 import "./config"
-import "antd-mobile/dist/antd-mobile.css"
+import "./index.css"
+
 const reduxDevtools = window.devToolsExtension;
 const store = createStore(
     reducers,
     compose(applyMiddleware(thunk), reduxDevtools() || {})
 );
-// 登录
-// 没有登录信息，统一跳转到login
-// 页面
-//  一营
-//  二营
-//  三营
-// router+redux
-ReactDom.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <Switch>
-                {/*只渲染第一个命中的Route*/}
-                <Route path="/login" exact component={Auth}></Route>
-                <Route path="/dashboard" component={Dashboard}></Route>
-                {/*<Redirect to="/dashboard"></Redirect>*/}
-            </Switch>
+function Boss() {
+    return <h2>Boss页面</h2>
+}
 
+ReactDom.render(
+    (<Provider store={store}>
+        <BrowserRouter>
+            <div>
+                <AuthRoute></AuthRoute>
+                <Route path="/boss" component={Boss}></Route>
+                <Route path="/login" component={Login}></Route>
+                <Route path="/register" component={Register}></Route>
+            </div>
         </BrowserRouter>
-    </Provider>
-    , document.getElementById("root")
-);
+    </Provider>),
+    document.getElementById("root")
+)
